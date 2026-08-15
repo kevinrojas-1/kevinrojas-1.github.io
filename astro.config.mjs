@@ -11,7 +11,7 @@ const siteUrl = process.env.SITE_URL || homeData.siteUrl || undefined;
 
 // https://astro.build/config
 export default defineConfig({
-  site: siteUrl,
+  site: 'https://kevinrojas-1.github.io',
   vite: {
     plugins: [tailwindcss()]
   },
