@@ -1,18 +1,18 @@
 {
-  "name": "John Doe",
+  "name": "Kevin Nicolas Rojas Rodriguez",
   "photoUrl": "favicon.svg",
-  "location": "City, Country",
-  "availability": "Available for hire",
-  "description": "A brief, compelling introduction about who you are and what you do. Mention your core philosophy, your passion for building digital products, and your drive for creating efficient, high-impact solutions.",
-  "descriptionHtml": "A brief, compelling introduction about who you are and what you do. Mention your core <span class='text-accent font-bold'>philosophy</span>, your passion for building digital products, and your drive for creating <span class='text-accent font-bold'>efficient</span>, <span class='text-accent font-bold'>high-impact</span> solutions.",
-  "webpageTitle": "John Doe | Lead Software Engineer",
-  "resumeUrl": "https://example-files.online-convert.com/document/pdf/example.pdf",
+  "location": "Bogotá, Colombia",
+  "availability": "Student",
+  "description": "Soy estudiante de quinto semestre de Ingeniería de Sistemas en la Universidad El Bosque. Me interesa el desarrollo de software, la tecnología y las bases de datos. Tengo conocimientos en Java, Python y SQL, y busco fortalecer constantemente mis habilidades para aplicar mis conocimientos en proyectos reales y seguir creciendo profesionalmente en el área de tecnología.",
+  "descriptionHtml": "Soy estudiante de quinto semestre de <span class='text-accent font-bold'>Ingeniería de Sistemas</span> en la Universidad El Bosque. Me interesa el <span class='text-accent font-bold'>desarrollo de software</span>, la tecnología y las <span class='text-accent font-bold'>bases de datos</span>. Tengo conocimientos en <span class='text-accent font-bold'>Java</span>, <span class='text-accent font-bold'>Python</span> y <span class='text-accent font-bold'>SQL</span>, y busco fortalecer constantemente mis habilidades para aplicar mis conocimientos en proyectos reales y seguir creciendo profesionalmente en el área de tecnología.",
+  "webpageTitle": "Kevin Nicolas Rojas Rodriguez | Estudiante de Ingeniería de Sistemas",
+  "resumeUrl": "",
 
   "_seo_comment": "SEO fields — update these along with your personal info for best search engine visibility.",
-  "jobTitle": "Lead Software Engineer",
-  "keywords": "John Doe, software engineer, Flutter, FastAPI, mobile development, portfolio",
-  "siteUrl": "https://your-domain.com",
-  "lang": "en",
+  "jobTitle": "Estudiante de Ingeniería de Sistemas",
+  "keywords": "Kevin Nicolas Rojas Rodriguez, estudiante de ingeniería de sistemas, Universidad El Bosque, Java, Python, SQL, bases de datos, desarrollo de software",
+  "siteUrl": "https://kevinrojas-1.github.io",
+  "lang": "es",
   "twitterHandle": "",
   "ogImageUrl": "/placeholder.jpeg",
 
@@ -20,16 +20,9 @@
   "socials": [
     {
       "name": "GitHub",
-      "url": "https://github.com/[YOUR_USER_NAME]",
+      "url": "https://github.com/kevinrojas-1",
       "icon": "mdi:github",
-      "label": "View Profile",
-      "showInContact": true
-    },
-    {
-      "name": "LinkedIn",
-      "url": "https://linkedin.com/in/[YOUR_USER_NAME]",
-      "icon": "mdi:linkedin",
-      "label": "Connect",
+      "label": "Ver perfil",
       "showInContact": true
     },
     {
@@ -48,16 +41,16 @@
     },
     {
       "name": "Email",
-      "url": "mailto:your-mail@example.com",
+      "url": "mailto:knrojasr@unbosque.edu.co",
       "icon": "mdi:email",
-      "label": "Send Email",
+      "label": "Enviar correo",
       "showInContact": true
     },
     {
       "name": "WhatsApp",
-      "url": "https://wa.me/[YOUR_WHATSAPP_NUMBER]",
+      "url": "https://wa.me/573227542337",
       "icon": "mdi:whatsapp",
-      "label": "Send Message",
+      "label": "Enviar mensaje",
       "showInContact": true
     },
     {
@@ -67,24 +60,11 @@
       "label": "View Profile",
       "showInContact": false
     },
-    {
-      "name": "Messenger",
-      "url": "#",
-      "icon": "mdi:facebook-messenger",
-      "label": "Send Message",
-      "showInContact": true
-    },
+    
     {
       "name": "Instagram",
       "url": "#",
       "icon": "mdi:instagram",
-      "label": "View Profile",
-      "showInContact": false
-    },
-    {
-      "name": "Twitter",
-      "url": "#",
-      "icon": "mdi:twitter",
       "label": "View Profile",
       "showInContact": false
     }
