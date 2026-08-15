@@ -7,6 +7,7 @@ import Projects from "../components/projects.astro";
 import Contact from "../components/contact.astro";
 import Footer from "../components/footer.astro";
 import Career from "../components/career.astro";
+import Presentation from "../components/presentation.astro";
 import localData from '../data/home.json';
 
 interface Social {
@@ -73,11 +74,12 @@ const {
   lang={lang}
   socials={socials}
 >
-  <Nav />
-	<Home />
-	<Career />
-	<Projects />
-	<Tech />
-	<Contact />
-	<Footer />
+    <Nav/>
+  <Home/>
+  <Career/>
+  <Presentation/>
+  <Projects/>
+  <Tech/>
+  <Contact/>
+  <Footer/>
 </Layout>

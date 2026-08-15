@@ -1,0 +1,88 @@
+---
+import homeData from "../data/home.json";
+
+const videoUrl = "https://www.youtube.com/embed/v7HyyOnixJ8";
+---
+
+<section id="presentacion" class="mx-auto max-w-6xl px-6 py-24">
+  <div class="mb-12">
+    <h2 class="text-4xl font-bold md:text-5xl">
+      <span class="text-accent">/</span> Presentación
+    </h2>
+
+    <p class="mt-4 max-w-2xl text-lg opacity-70">
+      Conoce un poco sobre mí, mi formación y mis objetivos profesionales.
+    </p>
+  </div>
+
+  <div class="grid items-center gap-10 md:grid-cols-2">
+
+    <!-- Foto y descripción -->
+    <div class="flex flex-col items-center text-center md:items-start md:text-left">
+
+      <img
+        src={homeData.photoUrl}
+        alt={`Foto de ${homeData.name}`}
+        class="mb-6 h-48 w-48 rounded-full object-cover ring-2 ring-accent/50"
+      />
+
+      <h3 class="text-3xl font-bold">
+        Kevin Nicolas Rojas Rodriguez
+      </h3>
+
+      <p class="mt-2 text-lg text-accent">
+        Estudiante de Ingeniería de Sistemas
+      </p>
+
+      <p class="mt-5 leading-7 opacity-80">
+        Soy estudiante de quinto semestre de Ingeniería de Sistemas en la
+        Universidad El Bosque. Me interesa el desarrollo de software, la
+        tecnología y las bases de datos. Tengo conocimientos en Java, Python
+        y SQL, y busco fortalecer constantemente mis habilidades para aplicar
+        mis conocimientos en proyectos reales y seguir creciendo
+        profesionalmente en el área de tecnología.
+      </p>
+
+      <div class="mt-6 flex flex-wrap justify-center gap-3 md:justify-start">
+        <span class="rounded-full border border-accent/40 px-4 py-2 text-sm">
+          Java
+        </span>
+
+        <span class="rounded-full border border-accent/40 px-4 py-2 text-sm">
+          Python
+        </span>
+
+        <span class="rounded-full border border-accent/40 px-4 py-2 text-sm">
+          SQL
+        </span>
+
+        <span class="rounded-full border border-accent/40 px-4 py-2 text-sm">
+          Bases de Datos
+        </span>
+      </div>
+
+    </div>
+
+    <!-- Video -->
+    <div>
+      <div class="overflow-hidden rounded-2xl border border-accent/30 bg-black shadow-xl">
+
+        <div class="aspect-video">
+          <iframe
+            src={videoUrl}
+            title="Video de presentación de Kevin Nicolas Rojas Rodriguez"
+            class="h-full w-full"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+      </div>
+
+      <p class="mt-4 text-center text-sm opacity-60">
+        Video de presentación — Bases de Datos 2
+      </p>
+    </div>
+
+  </div>
+</section>
