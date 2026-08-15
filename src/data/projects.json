@@ -1,20 +1,38 @@
 [
   {
-    "title": "Awesome Website",
-    "description": "A high-performance, SEO-optimized web application built with modern frameworks to showcase technical expertise.",
-    "images": ["astro-01.webp", "astro-02.jpeg"],
-    "tech": ["Astro", "Tailwind"],
-    "platforms": ["web"],
-    "link": "https://astro.build/themes/details/career-portfolio-data-driven-astro-ssg/",
-    "category": "Published Website"
+    "title": "SQL",
+    "description": "Evidencias y ejercicios realizados durante el curso de Bases de Datos 2 utilizando consultas SQL.",
+    "images": ["#"],
+    "tech": ["SQL"],
+    "platforms": ["database"],
+    "link": "#",
+    "category": "Evidencia"
   },
   {
-    "title": "Demo Mobile App",
-    "description": "A high-performance mobile application built with modern frameworks to showcase technical expertise.",
-    "images": ["astro-02.jpeg", "#"],
-    "tech": ["Flutter", "Dart", "REST API"],
-    "platforms": ["apple-ios", "android"],
-    "link": "https://github.com/nbakh16/career-portfolio-template",
-    "category": "Hobby"
+    "title": "PL/SQL Scripts",
+    "description": "Scripts y ejercicios de programación en PL/SQL desarrollados durante el curso.",
+    "images": ["#"],
+    "tech": ["PL/SQL"],
+    "platforms": ["database"],
+    "link": "#",
+    "category": "Evidencia"
+  },
+  {
+    "title": "NoSQL",
+    "description": "Evidencias de actividades y ejercicios relacionados con bases de datos NoSQL.",
+    "images": ["#"],
+    "tech": ["NoSQL"],
+    "platforms": ["database"],
+    "link": "#",
+    "category": "Evidencia"
+  },
+  {
+    "title": "Proyecto",
+    "description": "Espacio destinado para documentar y presentar el proyecto final de Bases de Datos 2.",
+    "images": ["#"],
+    "tech": ["Bases de Datos 2"],
+    "platforms": ["database"],
+    "link": "#",
+    "category": "Evidencia"
   }
 ]
