@@ -1,3 +1,4 @@
+
 [
   {
     "title": "SQL",
@@ -5,7 +6,7 @@
     "images": ["#"],
     "tech": ["SQL"],
     "platforms": ["database"],
-    "link": "#",
+    "link": "https://github.com/kevinrojas-1/taller-sql-oracle",
     "category": "Evidencia"
   },
   {
@@ -14,7 +15,7 @@
     "images": ["#"],
     "tech": ["PL/SQL"],
     "platforms": ["database"],
-    "link": "#",
+    "link": "https://github.com/kevinrojas-1/taller-sql-oracle",
     "category": "Evidencia"
   },
   {
