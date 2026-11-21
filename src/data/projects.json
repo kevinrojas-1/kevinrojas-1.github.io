@@ -1,8 +1,7 @@
-
 [
   {
     "title": "SQL",
-    "description": "Evidencias y ejercicios realizados durante el curso de Bases de Datos 2 utilizando consultas SQL.",
+    "description": "Consultas de selección, filtros, agrupaciones y uniones (JOIN) sobre bases de datos relacionales. El objetivo es practicar la extracción de información coherente desde varias tablas.",
     "images": ["#"],
     "tech": ["SQL"],
     "platforms": ["database"],
@@ -11,7 +10,7 @@
   },
   {
     "title": "PL/SQL Scripts",
-    "description": "Scripts y ejercicios de programación en PL/SQL desarrollados durante el curso.",
+    "description": "Bloques anónimos, procedimientos, funciones y disparadores (triggers) que automatizan reglas de negocio y validaciones directamente en la base de datos.",
     "images": ["#"],
     "tech": ["PL/SQL"],
     "platforms": ["database"],
@@ -19,21 +18,12 @@
     "category": "Evidencia"
   },
   {
-    "title": "NoSQL",
-    "description": "Evidencias de actividades y ejercicios relacionados con bases de datos NoSQL.",
+    "title": "Gimnasio BD2 - Proyecto final",
+    "description": "Proyecto final de Bases de Datos 2 que diseña y consulta la base de datos de un gimnasio, con el objetivo de gestionar la información de socios, planes y asistencias.",
     "images": ["#"],
-    "tech": ["NoSQL"],
+    "tech": ["SQL"],
     "platforms": ["database"],
-    "link": "#",
-    "category": "Evidencia"
-  },
-  {
-    "title": "Proyecto",
-    "description": "Espacio destinado para documentar y presentar el proyecto final de Bases de Datos 2.",
-    "images": ["#"],
-    "tech": ["Bases de Datos 2"],
-    "platforms": ["database"],
-    "link": "#",
-    "category": "Evidencia"
+    "link": "https://github.com/malaver051/gimnasio_bd2_proyecto_final",
+    "category": "Proyecto"
   }
 ]

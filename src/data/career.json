@@ -1,11 +1,18 @@
 [
   {
+    "company": "Taller de PL/SQL Avanzado · Bases de Datos 2",
+    "role": "Desarrollador de base de datos",
+    "period": "2026",
+    "type": "Project",
+    "description": "Desarrollo de lógica de negocio directamente en Oracle con PL/SQL avanzado: procedimientos y funciones almacenadas, paquetes, cursores explícitos, manejo de excepciones y disparadores (triggers) para validar y auditar los datos. El objetivo fue automatizar reglas del negocio dentro de la base de datos, garantizar la integridad de la información y reducir la lógica repetida en la aplicación.",
+    "skills": ["PL/SQL", "Oracle", "Triggers", "Procedimientos almacenados"]
+  },
+  {
     "company": "Universidad El Bosque",
     "role": "Estudiante de Ingeniería de Sistemas",
     "period": "2024 - Present",
     "type": "Student",
     "description": "Estudiante de quinto semestre de Ingeniería de Sistemas, con formación en desarrollo de software, programación y bases de datos.",
-    "skills": ["Java", "Python", "SQL", "Bases de Datos"]
+    "skills": ["Java", "SQL", "Bases de Datos"]
   }
- 
 ]
