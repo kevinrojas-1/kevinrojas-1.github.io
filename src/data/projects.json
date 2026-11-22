@@ -1,29 +1,142 @@
 [
   {
-    "title": "SQL",
-    "description": "Consultas de selección, filtros, agrupaciones y uniones (JOIN) sobre bases de datos relacionales. El objetivo es practicar la extracción de información coherente desde varias tablas.",
-    "images": ["#"],
-    "tech": ["SQL"],
+    "title": "Taller SQL · Banco Andino",
+    "description": "Consultas de selección, filtros, agrupaciones y uniones (JOIN) sobre una base de datos bancaria en Oracle, junto con índices y la optimización de una consulta lenta.",
+    "images": [],
+    "icon": "mdi:database-search",
+    "tech": ["SQL", "Oracle"],
     "platforms": ["database"],
-    "link": "https://github.com/kevinrojas-1/taller-sql-oracle",
-    "category": "Evidencia"
+    "category": "Evidencia",
+    "course": "Bases de Datos 2",
+    "period": "2026-2",
+    "team": ["Kevin Rojas", "Kariana Rivas", "Julián Valencia"],
+    "link": "https://github.com/kevinrojas-1/Taller-SQL-Oracle",
+    "repoLabel": "kevinrojas-1/Taller-SQL-Oracle",
+    "slides": [
+      {
+        "kicker": "El taller",
+        "title": "Consultas sobre un banco",
+        "text": "Trabajamos sobre la base de datos de un banco ficticio, Banco Andino, con cuentas, transferencias y notificaciones, en Oracle SQL Developer."
+      },
+      {
+        "kicker": "SQL avanzado",
+        "title": "Sacar información de varias tablas",
+        "items": [
+          "Consultas con filtros, agrupaciones y funciones de agregación",
+          "Uniones (JOIN) y subconsultas",
+          "MERGE para actualizar saldos sin dejarlos en negativo"
+        ]
+      },
+      {
+        "kicker": "Rendimiento",
+        "title": "Hacer que las consultas sean rápidas",
+        "items": [
+          "Índices compuestos sobre las transferencias",
+          "Comparación de planes de ejecución",
+          "Optimización de la consulta del tablero de transferencias"
+        ]
+      },
+      {
+        "kicker": "Reto integrador",
+        "title": "Transferencias sin errores",
+        "text": "Corregimos una transferencia entre cuentas para que no se bloquee ni pierda dinero cuando dos personas la ejecutan al mismo tiempo, usando FOR UPDATE y un solo COMMIT."
+      },
+      {
+        "kicker": "Repositorio",
+        "title": "Organización de la entrega",
+        "text": "Publiqué el trabajo del grupo en mi GitHub, con los scripts SQL y su documentación."
+      }
+    ]
   },
   {
-    "title": "PL/SQL Scripts",
-    "description": "Bloques anónimos, procedimientos, funciones y disparadores (triggers) que automatizan reglas de negocio y validaciones directamente en la base de datos.",
-    "images": ["#"],
-    "tech": ["PL/SQL"],
+    "title": "Taller PL/SQL · Inventario",
+    "description": "Procedimientos, funciones, cursores, excepciones y disparadores (triggers) que automatizan las reglas de negocio de un inventario directamente en la base de datos.",
+    "images": [],
+    "icon": "mdi:code-braces",
+    "tech": ["PL/SQL", "Oracle"],
     "platforms": ["database"],
-    "link": "https://github.com/kevinrojas-1/taller-sql-oracle",
-    "category": "Evidencia"
+    "category": "Evidencia",
+    "course": "Bases de Datos 2",
+    "period": "2026-2",
+    "team": ["Kevin Rojas", "Kariana Rivas", "Julián Valencia"],
+    "link": "https://github.com/kevinrojas-1/Taller-SQL-Oracle",
+    "repoLabel": "kevinrojas-1/Taller-SQL-Oracle",
+    "slides": [
+      {
+        "kicker": "El taller",
+        "title": "Lógica dentro de la base de datos",
+        "text": "En este taller programamos en PL/SQL las reglas de un sistema de inventario con productos, existencias, pedidos y movimientos."
+      },
+      {
+        "kicker": "Procedimientos y funciones",
+        "title": "Operaciones del negocio",
+        "items": [
+          "Registrar productos y ajustar el stock",
+          "Crear pedidos validando la información",
+          "Calcular el stock disponible, el cupo del cliente y los descuentos"
+        ]
+      },
+      {
+        "kicker": "Control",
+        "title": "Cursores, excepciones y triggers",
+        "items": [
+          "Cursores explícitos para recorrer resultados",
+          "Manejo de excepciones con mensajes claros",
+          "Disparadores para validar y auditar los cambios"
+        ]
+      },
+      {
+        "kicker": "Caso integrador",
+        "title": "Todo junto",
+        "text": "El taller cierra con un caso que combina procedimientos, funciones y disparadores sobre el mismo esquema de inventario."
+      }
+    ]
   },
   {
-    "title": "Gimnasio BD2 - Proyecto final",
-    "description": "Proyecto final de Bases de Datos 2 que diseña y consulta la base de datos de un gimnasio, con el objetivo de gestionar la información de socios, planes y asistencias.",
-    "images": ["#"],
-    "tech": ["SQL"],
-    "platforms": ["database"],
+    "title": "GymBosque · Proyecto final",
+    "description": "Proyecto final de Bases de Datos 2: una aplicación web para gestionar un gimnasio con PostgreSQL y MongoDB, con vistas para administración, recepción, entrenadores y clientes.",
+    "images": [],
+    "icon": "mdi:dumbbell",
+    "tech": ["PostgreSQL", "MongoDB", "React", "Spring Boot"],
+    "platforms": ["web", "database"],
+    "category": "Proyecto",
+    "course": "Bases de Datos 2 · Proyecto final",
+    "period": "2026-2",
+    "team": ["Kevin Rojas", "Kariana Rivas", "Julián Valencia"],
     "link": "https://github.com/malaver051/gimnasio_bd2_proyecto_final",
-    "category": "Proyecto"
+    "repoLabel": "malaver051/gimnasio_bd2_proyecto_final",
+    "repoPrivate": true,
+    "demo": "https://gimnasio-bd2-proyecto-final.vercel.app",
+    "slides": [
+      {
+        "kicker": "El proyecto",
+        "title": "Un gimnasio administrado desde la web",
+        "text": "GymBosque gestiona clientes, membresías, pagos, entrenadores, rutinas y clases de un gimnasio."
+      },
+      {
+        "kicker": "Dos bases de datos",
+        "title": "Relacional y NoSQL juntas",
+        "items": [
+          "PostgreSQL para clientes, membresías, pagos y clases",
+          "Funciones, procedimientos, triggers y vistas en el motor",
+          "MongoDB para rutinas, progreso físico y comentarios"
+        ]
+      },
+      {
+        "kicker": "Usuarios",
+        "title": "Una vista para cada rol",
+        "items": [
+          "Administrador: todo el gimnasio y los reportes",
+          "Recepción: clientes, membresías, pagos y clases",
+          "Entrenador: rutinas, clases y progreso físico",
+          "Cliente: sus rutinas y su progreso"
+        ]
+      },
+      {
+        "kicker": "Mi aporte",
+        "title": "Gestión del proyecto",
+        "text": "Elaboré la matriz de gestión de riesgos del proyecto y participé en el desarrollo con el equipo."
+      }
+    ]
   }
 ]

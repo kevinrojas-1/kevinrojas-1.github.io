@@ -7,16 +7,16 @@ import projectsData from '../data/projects.json';
   <div class="container mx-auto">
     <div class="mb-16 project-header">
       <h2 class="text-3xl md:text-4xl font-heading font-bold text-maintext mb-2 flex items-center gap-4">
-          <span class="text-accent">/</span> Featured Projects
+          <span class="text-accent">/</span> Proyectos
         </h2>
       <p class="text-subtext font-body text-sm max-w-md">
-        A selection of professional work, published apps, and experimental prototypes.
+        Proyectos y evidencias de mi carrera. Cada uno tiene una mini presentación y el enlace a su repositorio.
       </p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {projectsData.map((project) => (
-        <ProjectCard project={project} />
+      {projectsData.map((project, index) => (
+        <ProjectCard project={project} index={index} />
       ))}
     </div>
   </div>

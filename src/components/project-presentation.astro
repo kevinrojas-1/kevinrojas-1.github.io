@@ -1,0 +1,277 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Slide {
+  kicker: string;
+  title: string;
+  text?: string;
+  items?: string[];
+}
+
+interface Props {
+  id: string;
+  project: {
+    title: string;
+    course?: string;
+    period?: string;
+    team?: string[];
+    link: string;
+    repoLabel?: string;
+    repoPrivate?: boolean;
+    demo?: string;
+    slides?: Slide[];
+  };
+}
+
+const { id, project } = Astro.props;
+const slides = project.slides ?? [];
+const total = slides.length + 1;
+const pad = (n: number) => String(n).padStart(2, '0');
+const meta = [project.course, project.period].filter(Boolean).join(' · ');
+---
+
+<dialog
+  id={id}
+  class="presentation m-auto w-[min(56rem,calc(100vw-2rem))] max-h-[calc(100dvh-2rem)] rounded-2xl border border-accent/20 bg-background p-0 text-maintext backdrop:bg-black/70 backdrop:backdrop-blur-sm"
+  aria-labelledby={`${id}-title`}
+  data-presentation
+>
+  <div class="flex flex-col gap-6 p-6 md:p-10">
+    <header class="flex items-start justify-between gap-4">
+      <div>
+        {meta && <p class="text-[11px] font-body font-bold uppercase tracking-widest text-accent">{meta}</p>}
+        <h3 id={`${id}-title`} class="mt-1 text-lg md:text-xl font-heading font-bold">{project.title}</h3>
+      </div>
+      <div class="flex items-center gap-3">
+        <span class="whitespace-nowrap text-xs font-body tabular-nums text-subtext" data-counter aria-hidden="true">01 / {pad(total)}</span>
+        <button
+          type="button"
+          class="rounded-lg border border-accent/20 p-2 text-subtext transition-colors hover:border-accent/60 hover:text-accent"
+          aria-label="Cerrar presentación"
+          data-close
+        >
+          <Icon name="mdi:close" class="h-5 w-5" aria-hidden="true" />
+        </button>
+      </div>
+    </header>
+
+    <div class="flex gap-1.5" aria-hidden="true">
+      {Array.from({ length: total }).map((_, i) => (
+        <span class:list={['h-1 flex-1 rounded-full transition-colors duration-300', i === 0 ? 'bg-accent' : 'bg-accent/15']} data-dot />
+      ))}
+    </div>
+
+    <div class="min-h-[17rem] md:min-h-[19rem]">
+      {
+        slides.map((slide, i) => (
+          <article
+            class="slide flex flex-col justify-center"
+            role="group"
+            aria-roledescription="diapositiva"
+            aria-label={`${i + 1} de ${total}: ${slide.kicker}`}
+            hidden={i !== 0}
+            data-slide
+          >
+            <p class="text-xs font-body font-bold uppercase tracking-widest text-accent">{slide.kicker}</p>
+            <p class="mt-3 text-3xl md:text-4xl font-heading font-bold leading-tight">{slide.title}</p>
+            {slide.text && <p class="mt-5 max-w-2xl text-base md:text-lg font-body leading-relaxed text-subtext">{slide.text}</p>}
+            {slide.items && slide.items.length > 0 && (
+              <ul class="mt-5 flex max-w-2xl flex-col gap-3">
+                {slide.items.map((item) => (
+                  <li class="flex gap-3 text-base md:text-lg font-body text-subtext">
+                    <span class="mt-[0.7em] h-0.5 w-3 shrink-0 bg-accent" aria-hidden="true" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </article>
+        ))
+      }
+
+      <article
+        class="slide flex flex-col justify-center"
+        role="group"
+        aria-roledescription="diapositiva"
+        aria-label={`${total} de ${total}: Repositorio`}
+        hidden={slides.length !== 0}
+        data-slide
+      >
+        <p class="text-xs font-body font-bold uppercase tracking-widest text-accent">Repositorio</p>
+        <p class="mt-3 text-3xl md:text-4xl font-heading font-bold leading-tight">Ahora mira el código</p>
+        <p class="mt-5 max-w-2xl text-base md:text-lg font-body leading-relaxed text-subtext">
+          {project.demo
+            ? 'Puedes probar la aplicación publicada o revisar el código del proyecto en GitHub.'
+            : 'Todo el código del proyecto está en GitHub, con sus scripts y su documentación.'}
+        </p>
+        <div class="mt-7 flex flex-wrap items-center gap-3">
+          {project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener"
+              class="inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 text-sm font-body font-bold text-background transition-opacity hover:opacity-90"
+            >
+              <Icon name="mdi:web" class="h-5 w-5" aria-hidden="true" />
+              Ver demo
+            </a>
+          )}
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener"
+            class:list={[
+              'inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-body font-bold transition-all',
+              project.demo
+                ? 'border border-accent/40 text-accent hover:bg-accent/10'
+                : 'bg-accent text-background hover:opacity-90',
+            ]}
+          >
+            <Icon name="mdi:github" class="h-5 w-5" aria-hidden="true" />
+            Ver repositorio
+          </a>
+        </div>
+        {project.repoLabel && (
+          <p class="mt-5 font-mono text-xs text-subtext">
+            github.com/{project.repoLabel}
+            {project.repoPrivate && <span> · repositorio privado</span>}
+          </p>
+        )}
+        {project.team && project.team.length > 0 && (
+          <p class="mt-2 text-xs font-body text-subtext">Equipo: {project.team.join(', ')}</p>
+        )}
+      </article>
+    </div>
+
+    <footer class="flex items-center justify-between gap-3 border-t border-accent/10 pt-5">
+      <button
+        type="button"
+        class="inline-flex items-center gap-2 rounded-lg border border-accent/20 px-4 py-2 text-sm font-body font-semibold transition-colors hover:border-accent/60 hover:text-accent disabled:cursor-not-allowed disabled:opacity-30"
+        data-prev
+        disabled
+      >
+        <Icon name="mdi:arrow-left" class="h-4 w-4" aria-hidden="true" />
+        <span class="hidden sm:inline">Anterior</span>
+        <span class="sr-only sm:hidden">Anterior</span>
+      </button>
+      <button type="button" class="text-xs font-body text-accent underline underline-offset-4" data-skip>
+        Ir al repositorio
+      </button>
+      <button
+        type="button"
+        class="inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-body font-bold text-background transition-opacity hover:opacity-90"
+        data-next
+      >
+        <span class="hidden sm:inline">Siguiente</span>
+        <span class="sr-only sm:hidden">Siguiente</span>
+        <Icon name="mdi:arrow-right" class="h-4 w-4" aria-hidden="true" />
+      </button>
+    </footer>
+
+    <p class="sr-only" aria-live="polite" data-status></p>
+  </div>
+</dialog>
+
+<script>
+  function initPresentations() {
+    document.querySelectorAll<HTMLButtonElement>('[data-open-presentation]').forEach((trigger) => {
+      if (trigger.dataset.ready) return;
+      trigger.dataset.ready = 'true';
+      const dialog = document.getElementById(trigger.dataset.openPresentation ?? '') as HTMLDialogElement | null;
+      if (!dialog) return;
+
+      const slides = Array.from(dialog.querySelectorAll<HTMLElement>('[data-slide]'));
+      const dots = Array.from(dialog.querySelectorAll<HTMLElement>('[data-dot]'));
+      const counter = dialog.querySelector<HTMLElement>('[data-counter]');
+      const status = dialog.querySelector<HTMLElement>('[data-status]');
+      const prev = dialog.querySelector<HTMLButtonElement>('[data-prev]');
+      const next = dialog.querySelector<HTMLButtonElement>('[data-next]');
+      const skip = dialog.querySelector<HTMLButtonElement>('[data-skip]');
+      const close = dialog.querySelector<HTMLButtonElement>('[data-close]');
+      const total = slides.length;
+      const pad = (n: number) => String(n).padStart(2, '0');
+      let current = 0;
+
+      const show = (index: number, announce = true) => {
+        current = Math.max(0, Math.min(index, total - 1));
+        slides.forEach((slide, i) => (slide.hidden = i !== current));
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('bg-accent', i <= current);
+          dot.classList.toggle('bg-accent/15', i > current);
+        });
+        if (counter) counter.textContent = `${pad(current + 1)} / ${pad(total)}`;
+        if (prev) prev.disabled = current === 0;
+        const last = current === total - 1;
+        next?.classList.toggle('invisible', last);
+        skip?.classList.toggle('invisible', last);
+        if (announce && status) status.textContent = `Diapositiva ${slides[current].getAttribute('aria-label') ?? ''}`;
+      };
+
+      trigger.addEventListener('click', () => {
+        show(0, false);
+        dialog.showModal();
+        next?.focus();
+      });
+      prev?.addEventListener('click', () => show(current - 1));
+      next?.addEventListener('click', () => {
+        show(current + 1);
+        if (current === total - 1) slides[current].querySelector<HTMLElement>('a')?.focus();
+      });
+      skip?.addEventListener('click', () => {
+        show(total - 1);
+        slides[total - 1].querySelector<HTMLElement>('a')?.focus();
+      });
+      close?.addEventListener('click', () => dialog.close());
+      dialog.addEventListener('click', (event) => {
+        if (event.target === dialog) dialog.close();
+      });
+      dialog.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowRight') show(current + 1);
+        if (event.key === 'ArrowLeft') show(current - 1);
+      });
+      dialog.addEventListener('close', () => trigger.focus());
+    });
+  }
+
+  initPresentations();
+  document.addEventListener('astro:after-swap', initPresentations);
+</script>
+
+<style>
+  .presentation[open] {
+    animation: presentation-in 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .slide:not([hidden]) {
+    animation: slide-in 0.35s ease;
+  }
+
+  @keyframes presentation-in {
+    from {
+      opacity: 0;
+      transform: translateY(16px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      transform: translateX(1.25rem);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .presentation[open],
+    .slide:not([hidden]) {
+      animation: none;
+    }
+  }
+</style>
